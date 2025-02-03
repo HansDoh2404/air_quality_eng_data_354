@@ -47,7 +47,7 @@ Orchestration des tâches ETL : Apache Airflow <br />
 Modèle de Forecasting : Python (basé sur la librairie Prophet) <br /><br />
 
 **Ci-dessous l'image de l'architecture :** <br /><br />
-<img src="archi.png" alt="ARCHITECTURE ETL" width="400" height="600"/>
+<img src="archi.png" alt="ARCHITECTURE ETL" width="800" height="400"/>
 
 
   
