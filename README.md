@@ -2,7 +2,8 @@
 Projet consistant à mettre en place un ETL pour l'étude de la qualité de l'air
 
 ## Prérequis 
-Docker et Docker compose
+Docker : https://docs.docker.com/get-docker <br />
+Docker compose : https://docs.docker.com/compose/install <br />
 Une fois installer, lancer docker
 
 ## Installation et lancement du projet 
@@ -43,7 +44,11 @@ Base de données : MongoDB. <br />
 Visualisation : Apache Superset <br />
 Driver de connexion entre Superset et MongoDB : Apache Drill <br />
 Orchestration des tâches ETL : Apache Airflow <br />
-Modèle de Forecasting : Python (basé sur la librairie Prophet)
+Modèle de Forecasting : Python (basé sur la librairie Prophet) <br /><br />
+
+Ci-dessous l'image de l'architecture : <br />
+![Architecture ETL](archi.png)
+
   
   
 
