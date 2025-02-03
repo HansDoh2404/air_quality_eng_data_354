@@ -61,6 +61,9 @@ services:
     ports:
       - "8047:8047"
       - "31010:31010"
+    volumes:
+      - drill-config:/opt/drill/conf  # Volume pour la persistance des configurations
+      - drill-logs:/opt/drill/log     # Volume pour les logs persistants
     command: >
       /bin/bash -c "echo 'export DRILL_HOST_NAME=localhost' >> /opt/drill/conf/drill-env.sh &&
                     exec /opt/drill/bin/sqlline -u jdbc:drill:zk=local"
@@ -71,7 +74,7 @@ services:
       interval: 30s
       retries: 5
       start_period: 30s
-    restart: always
+    restart: "always" 
 
   # Airflow Webserver
   airflow-webserver:
@@ -138,6 +141,7 @@ services:
       - "8091:8088"
     volumes:
       - ./superset:/var/lib/superset
+      - superset-db:/var/lib/superset/.superset
     command: >
       /bin/bash -c "
       superset db upgrade &&
@@ -149,3 +153,6 @@ services:
 volumes:
   postgres-db-volume:
   mongodb-data:
+  drill-config:
+  drill-logs:
+  superset-db:
