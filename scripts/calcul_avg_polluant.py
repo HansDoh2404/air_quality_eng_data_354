@@ -1,18 +1,20 @@
+import sys
+import os
+# Ajouter du chemin du dossier parent au sys.path pour faciliter les importations
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import pandas as pd
 import datetime
 from pymongo import MongoClient
-
-
-# Configuration MongoDB
-MONGO_URI = "mongodb://localhost:27018"
-DB_NAME = "air_quality"
-COLLECTION_NAME = "hourly_data"
-DAILY_COLLECTION_NAME = "daily_averages"
+from dags.config.db_config import DB_NAME, COLLECTION_NAME, DAILY_COLLECTION_NAME, MONGO_URI_LOCAL
 
 def calculate_and_store_daily_averages():
+    
+    # Fonction de calcul et de stockage des moyennes journalières des différents polluants
+    
     try:
         # Connexion à MongoDB
-        mongo_client = MongoClient(MONGO_URI)
+        mongo_client = MongoClient(MONGO_URI_LOCAL)
         db = mongo_client[DB_NAME]
         input_collection = db[COLLECTION_NAME]
         output_collection = db[DAILY_COLLECTION_NAME]

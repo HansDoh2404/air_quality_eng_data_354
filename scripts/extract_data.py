@@ -1,16 +1,13 @@
+import sys
+import os
+# Ajouter du chemin du dossier parent au sys.path pour faciliter les importations
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import datetime
 import requests
 from pymongo import MongoClient, errors
-
-# URL de l'API
-API_URL = "https://airqino-api.magentalab.it/v3/getStationHourlyAvg/"
-
-# Configuration de MongoDB
-MONGO_URI = "mongodb://localhost:27018"  
-DB_NAME = "air_quality"                # Nom de la base de données 
-COLLECTION_HEADERS = "headers"         # Collection pour les headers
-COLLECTION_DATA = "hourly_data"        # Collection pour les données
-station_ids = ["283164601", "283181971" ]
+from configs.db_config import MONGO_URI_LOCAL, DB_NAME, COLLECTION_NAME, COLLECTION_HEADERS
+from configs.api_config import base_url, station_ids
 
 # Fonction pour extraire les données depuis l'API
 def fetch_data_from_api(url):
@@ -62,17 +59,17 @@ if __name__ == "__main__":
     print("Extraction des données depuis l'API...")
     
     # Connexion à MongoDB et garantie de l'existence des collections
-    collections = ensure_collections(MONGO_URI, DB_NAME, [COLLECTION_HEADERS, COLLECTION_DATA])
+    collections = ensure_collections(MONGO_URI_LOCAL, DB_NAME, [COLLECTION_HEADERS, COLLECTION_NAME])
     if collections is None:
         print("Impossible de se connecter à MongoDB. Arrêt du script.")
     else:
         headers_collection = collections[COLLECTION_HEADERS]
-        data_collection = collections[COLLECTION_DATA]
+        data_collection = collections[COLLECTION_NAME]
 
         # Parcours des stations et traitement des données
         for station_id in station_ids:
             print(f"Traitement de la station : {station_id}")
-            url = API_URL + station_id
+            url = base_url + station_id
             response = fetch_data_from_api(url)
             if response:
                 # Séparation des parties `header` et `data`
