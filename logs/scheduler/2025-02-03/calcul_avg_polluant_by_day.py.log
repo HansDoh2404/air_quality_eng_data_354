@@ -11002,3 +11002,59 @@
 [2025-02-03T13:28:39.839+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:28:39.838+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2025-02-03T13:28:39.855+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:28:39.854+0000] {dag.py:4180} INFO - Setting next_dagrun for daily_pollutant_averages_v4 to 2025-02-01 23:00:00+00:00, run_after=2025-02-02 23:00:00+00:00
 [2025-02-03T13:28:39.871+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/calcul_avg_polluant_by_day.py took 0.475 seconds
+[2025-02-03T13:29:08.963+0000] {processor.py:186} INFO - Started process (PID=11515) to work on /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:29:08.964+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/calcul_avg_polluant_by_day.py for tasks to queue
+[2025-02-03T13:29:08.966+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:29:08.965+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:29:09.331+0000] {processor.py:925} INFO - DAG(s) 'daily_pollutant_averages_v4' retrieved from /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:29:09.351+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:29:09.350+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-03T13:29:09.369+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:29:09.368+0000] {dag.py:4180} INFO - Setting next_dagrun for daily_pollutant_averages_v4 to 2025-02-01 23:00:00+00:00, run_after=2025-02-02 23:00:00+00:00
+[2025-02-03T13:29:09.385+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/calcul_avg_polluant_by_day.py took 0.427 seconds
+[2025-02-03T13:29:09.947+0000] {processor.py:186} INFO - Started process (PID=10618) to work on /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:29:09.948+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/calcul_avg_polluant_by_day.py for tasks to queue
+[2025-02-03T13:29:09.949+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:29:09.949+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:29:10.194+0000] {processor.py:925} INFO - DAG(s) 'daily_pollutant_averages_v4' retrieved from /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:29:10.213+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:29:10.213+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-03T13:29:10.357+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:29:10.356+0000] {dag.py:4180} INFO - Setting next_dagrun for daily_pollutant_averages_v4 to 2025-02-01 23:00:00+00:00, run_after=2025-02-02 23:00:00+00:00
+[2025-02-03T13:29:10.374+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/calcul_avg_polluant_by_day.py took 0.432 seconds
+[2025-02-03T13:29:39.456+0000] {processor.py:186} INFO - Started process (PID=11538) to work on /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:29:39.457+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/calcul_avg_polluant_by_day.py for tasks to queue
+[2025-02-03T13:29:39.458+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:29:39.458+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:29:39.812+0000] {processor.py:925} INFO - DAG(s) 'daily_pollutant_averages_v4' retrieved from /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:29:39.829+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:29:39.829+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-03T13:29:39.846+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:29:39.846+0000] {dag.py:4180} INFO - Setting next_dagrun for daily_pollutant_averages_v4 to 2025-02-01 23:00:00+00:00, run_after=2025-02-02 23:00:00+00:00
+[2025-02-03T13:29:39.860+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/calcul_avg_polluant_by_day.py took 0.410 seconds
+[2025-02-03T13:29:40.749+0000] {processor.py:186} INFO - Started process (PID=10642) to work on /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:29:40.749+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/calcul_avg_polluant_by_day.py for tasks to queue
+[2025-02-03T13:29:40.751+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:29:40.751+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:29:40.993+0000] {processor.py:925} INFO - DAG(s) 'daily_pollutant_averages_v4' retrieved from /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:29:41.133+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:29:41.132+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-03T13:29:41.148+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:29:41.148+0000] {dag.py:4180} INFO - Setting next_dagrun for daily_pollutant_averages_v4 to 2025-02-01 23:00:00+00:00, run_after=2025-02-02 23:00:00+00:00
+[2025-02-03T13:29:41.165+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/calcul_avg_polluant_by_day.py took 0.422 seconds
+[2025-02-03T13:30:10.056+0000] {processor.py:186} INFO - Started process (PID=11561) to work on /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:30:10.057+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/calcul_avg_polluant_by_day.py for tasks to queue
+[2025-02-03T13:30:10.059+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:30:10.059+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:30:10.722+0000] {processor.py:925} INFO - DAG(s) 'daily_pollutant_averages_v4' retrieved from /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:30:10.740+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:30:10.739+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-03T13:30:10.762+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:30:10.762+0000] {dag.py:4180} INFO - Setting next_dagrun for daily_pollutant_averages_v4 to 2025-02-01 23:00:00+00:00, run_after=2025-02-02 23:00:00+00:00
+[2025-02-03T13:30:10.777+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/calcul_avg_polluant_by_day.py took 0.734 seconds
+[2025-02-03T13:30:11.291+0000] {processor.py:186} INFO - Started process (PID=10666) to work on /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:30:11.292+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/calcul_avg_polluant_by_day.py for tasks to queue
+[2025-02-03T13:30:11.294+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:30:11.294+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:30:11.827+0000] {processor.py:925} INFO - DAG(s) 'daily_pollutant_averages_v4' retrieved from /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:30:11.860+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:30:11.860+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-03T13:30:11.894+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:30:11.894+0000] {dag.py:4180} INFO - Setting next_dagrun for daily_pollutant_averages_v4 to 2025-02-01 23:00:00+00:00, run_after=2025-02-02 23:00:00+00:00
+[2025-02-03T13:30:11.912+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/calcul_avg_polluant_by_day.py took 0.626 seconds
+[2025-02-03T13:30:40.968+0000] {processor.py:186} INFO - Started process (PID=11584) to work on /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:30:40.970+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/calcul_avg_polluant_by_day.py for tasks to queue
+[2025-02-03T13:30:40.972+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:30:40.971+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:30:41.468+0000] {processor.py:925} INFO - DAG(s) 'daily_pollutant_averages_v4' retrieved from /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:30:41.494+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:30:41.494+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-03T13:30:41.514+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:30:41.513+0000] {dag.py:4180} INFO - Setting next_dagrun for daily_pollutant_averages_v4 to 2025-02-01 23:00:00+00:00, run_after=2025-02-02 23:00:00+00:00
+[2025-02-03T13:30:41.534+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/calcul_avg_polluant_by_day.py took 0.572 seconds
+[2025-02-03T13:30:41.979+0000] {processor.py:186} INFO - Started process (PID=10690) to work on /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:30:41.980+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/calcul_avg_polluant_by_day.py for tasks to queue
+[2025-02-03T13:30:41.982+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:30:41.982+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:30:42.441+0000] {processor.py:925} INFO - DAG(s) 'daily_pollutant_averages_v4' retrieved from /opt/airflow/dags/calcul_avg_polluant_by_day.py
+[2025-02-03T13:30:42.462+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:30:42.461+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-03T13:30:42.486+0000] {logging_mixin.py:190} INFO - [2025-02-03T13:30:42.486+0000] {dag.py:4180} INFO - Setting next_dagrun for daily_pollutant_averages_v4 to 2025-02-01 23:00:00+00:00, run_after=2025-02-02 23:00:00+00:00
+[2025-02-03T13:30:42.504+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/calcul_avg_polluant_by_day.py took 0.531 seconds
