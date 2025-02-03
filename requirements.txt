@@ -8,7 +8,7 @@ apache-airflow-providers-apache-spark==4.11.3
 apache-airflow-providers-common-compat==1.2.2
 apache-airflow-providers-common-io==1.4.2
 apache-airflow-providers-common-sql==1.20.0
-apache-airflow-providers-fab==1.5.1
+apache-airflow-providers-fab==1.5.2
 apache-airflow-providers-ftp==3.11.1
 apache-airflow-providers-http==4.13.3
 apache-airflow-providers-imap==3.7.0
@@ -36,7 +36,7 @@ cmdstanpy==1.2.5
 colorama==0.4.6
 colorlog==6.9.0
 command-not-found==0.3
-configobj==5.0.6
+configobj==5.0.9
 ConfigUpdater==3.2
 connexion==2.14.2
 constantly==15.1.0
@@ -87,7 +87,7 @@ incremental==21.3.0
 inflection==0.5.1
 itsdangerous==2.2.0
 jeepney==0.7.1
-Jinja2==3.1.4
+Jinja2==3.1.5
 jmespath==0.10.0
 jsonpatch==1.32
 jsonpointer==2.0
@@ -118,7 +118,7 @@ multidict==6.1.0
 narwhals==1.24.2
 netifaces==0.11.0
 numpy==1.26.4
-oauthlib==3.2.0
+oauthlib==3.2.2
 opentelemetry-api==1.29.0
 opentelemetry-exporter-otlp==1.29.0
 opentelemetry-exporter-otlp-proto-common==1.29.0
@@ -189,7 +189,7 @@ termcolor==2.5.0
 text-unidecode==1.3
 time-machine==2.16.0
 tqdm==4.67.1
-Twisted==22.1.0
+Twisted==24.7.0
 typing_extensions==4.12.2
 tzdata==2024.2
 ubuntu-pro-client==8001
@@ -200,7 +200,7 @@ unicodecsv==0.14.1
 universal_pathlib==0.2.5
 urllib3==2.2.3
 wadllib==1.3.6
-Werkzeug==2.2.3
+Werkzeug==3.0.6
 wirerope==0.4.8
 wrapt==1.17.0
 WTForms==3.2.1
