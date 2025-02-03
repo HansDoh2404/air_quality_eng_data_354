@@ -1,0 +1,6 @@
+FROM apache/superset:latest
+
+USER root
+
+# Installation des dépendances supplémentaires si nécessaire
+RUN pip install --no-cache-dir pymongo sqlalchemy-drill

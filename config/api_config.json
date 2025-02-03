@@ -1,0 +1,4 @@
+{
+    "base_url": "https://airqino-api.magentalab.it/v3/getStationHourlyAvg/",
+    "station_ids": ["283164601", "283181971" ]
+}

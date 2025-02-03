@@ -1,0 +1,22 @@
+[2025-01-22T10:09:37.697+0000] {processor.py:186} INFO - Started process (PID=357) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_short_circuit_operator.py
+[2025-01-22T10:09:37.698+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_short_circuit_operator.py for tasks to queue
+[2025-01-22T10:09:37.702+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:37.701+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_short_circuit_operator.py
+[2025-01-22T10:09:37.714+0000] {processor.py:925} INFO - DAG(s) 'example_short_circuit_operator' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_short_circuit_operator.py
+[2025-01-22T10:09:37.850+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:37.849+0000] {override.py:1911} INFO - Created Permission View: can edit on DAG:example_short_circuit_operator
+[2025-01-22T10:09:37.860+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:37.860+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG:example_short_circuit_operator
+[2025-01-22T10:09:37.870+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:37.869+0000] {override.py:1911} INFO - Created Permission View: can read on DAG:example_short_circuit_operator
+[2025-01-22T10:09:37.878+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:37.877+0000] {override.py:1911} INFO - Created Permission View: can create on DAG Run:example_short_circuit_operator
+[2025-01-22T10:09:37.886+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:37.886+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG Run:example_short_circuit_operator
+[2025-01-22T10:09:37.895+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:37.895+0000] {override.py:1911} INFO - Created Permission View: menu access on DAG Run:example_short_circuit_operator
+[2025-01-22T10:09:37.904+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:37.904+0000] {override.py:1911} INFO - Created Permission View: can read on DAG Run:example_short_circuit_operator
+[2025-01-22T10:09:37.904+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:37.904+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-22T10:09:37.922+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:37.921+0000] {dag.py:3262} INFO - Creating ORM DAG for example_short_circuit_operator
+[2025-01-22T10:09:37.922+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:37.922+0000] {dag.py:4180} INFO - Setting next_dagrun for example_short_circuit_operator to None, run_after=None
+[2025-01-22T10:09:37.944+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_short_circuit_operator.py took 0.255 seconds
+[2025-01-22T10:10:08.051+0000] {processor.py:186} INFO - Started process (PID=650) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_short_circuit_operator.py
+[2025-01-22T10:10:08.056+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_short_circuit_operator.py for tasks to queue
+[2025-01-22T10:10:08.060+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:10:08.060+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_short_circuit_operator.py
+[2025-01-22T10:10:08.072+0000] {processor.py:925} INFO - DAG(s) 'example_short_circuit_operator' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_short_circuit_operator.py
+[2025-01-22T10:10:08.103+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:10:08.103+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-22T10:10:08.126+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:10:08.125+0000] {dag.py:4180} INFO - Setting next_dagrun for example_short_circuit_operator to None, run_after=None
+[2025-01-22T10:10:08.148+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_short_circuit_operator.py took 0.106 seconds

@@ -1,0 +1,42 @@
+[2025-01-25T18:10:06.446+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-25T18:10:06.512+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: extraction_by_hour_dag_v11.extract_and_load_to_mongodb_station_2 scheduled__2025-01-25T18:05:00+00:00 [queued]>
+[2025-01-25T18:10:06.546+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: extraction_by_hour_dag_v11.extract_and_load_to_mongodb_station_2 scheduled__2025-01-25T18:05:00+00:00 [queued]>
+[2025-01-25T18:10:06.547+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-01-25T18:10:06.851+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_and_load_to_mongodb_station_2> on 2025-01-25 18:05:00+00:00
+[2025-01-25T18:10:06.889+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'extraction_by_hour_dag_v11', 'extract_and_load_to_mongodb_station_2', 'scheduled__2025-01-25T18:05:00+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/extract_data_by_hour.py', '--cfg-path', '/tmp/tmpqlkug7ft']
+[2025-01-25T18:10:06.895+0000] {standard_task_runner.py:105} INFO - Job 15: Subtask extract_and_load_to_mongodb_station_2
+[2025-01-25T18:10:06.907+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=4925) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-01-25T18:10:06.909+0000] {standard_task_runner.py:72} INFO - Started process 4933 to run task
+[2025-01-25T18:10:07.506+0000] {task_command.py:467} INFO - Running <TaskInstance: extraction_by_hour_dag_v11.extract_and_load_to_mongodb_station_2 scheduled__2025-01-25T18:05:00+00:00 [running]> on host 64d28392d4c0
+[2025-01-25T18:10:07.948+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-25T18:10:08.065+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='extraction_by_hour_dag_v11' AIRFLOW_CTX_TASK_ID='extract_and_load_to_mongodb_station_2' AIRFLOW_CTX_EXECUTION_DATE='2025-01-25T18:05:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-25T18:05:00+00:00'
+[2025-01-25T18:10:08.067+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-25T18:10:08.069+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: extraction_by_hour_dag_v11.extract_and_load_to_mongodb_station_2 scheduled__2025-01-25T18:05:00+00:00 [queued]>
+[2025-01-25T18:10:08.126+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: extraction_by_hour_dag_v11.extract_and_load_to_mongodb_station_2 scheduled__2025-01-25T18:05:00+00:00 [queued]>
+[2025-01-25T18:10:08.127+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-01-25T18:10:08.211+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_and_load_to_mongodb_station_2> on 2025-01-25 18:05:00+00:00
+[2025-01-25T18:10:08.230+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'extraction_by_hour_dag_v11', 'extract_and_load_to_mongodb_station_2', 'scheduled__2025-01-25T18:05:00+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/extract_data_by_hour.py', '--cfg-path', '/tmp/tmpui_2e6bl']
+[2025-01-25T18:10:08.258+0000] {standard_task_runner.py:105} INFO - Job 38: Subtask extract_and_load_to_mongodb_station_2
+[2025-01-25T18:10:08.260+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=18261) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-01-25T18:10:08.262+0000] {standard_task_runner.py:72} INFO - Started process 18262 to run task
+[2025-01-25T18:10:08.737+0000] {task_command.py:467} INFO - Running <TaskInstance: extraction_by_hour_dag_v11.extract_and_load_to_mongodb_station_2 scheduled__2025-01-25T18:05:00+00:00 [running]> on host 8969ebd0a926
+[2025-01-25T18:10:09.304+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='extraction_by_hour_dag_v11' AIRFLOW_CTX_TASK_ID='extract_and_load_to_mongodb_station_2' AIRFLOW_CTX_EXECUTION_DATE='2025-01-25T18:05:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-25T18:05:00+00:00'
+[2025-01-25T18:10:09.312+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-25T18:10:09.461+0000] {logging_mixin.py:190} INFO - Erreur pour la station 283164601 : HTTPSConnectionPool(host='airqino-api.magentalab.it', port=443): Max retries exceeded with url: /v3/getStationHourlyAvg/283164601 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fe639a118e0>: Failed to resolve 'airqino-api.magentalab.it' ([Errno -2] Name or service not known)"))
+[2025-01-25T18:10:09.470+0000] {logging_mixin.py:190} INFO - Erreur pour la station 283181971 : HTTPSConnectionPool(host='airqino-api.magentalab.it', port=443): Max retries exceeded with url: /v3/getStationHourlyAvg/283181971 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fe6398e8470>: Failed to resolve 'airqino-api.magentalab.it' ([Errno -2] Name or service not known)"))
+[2025-01-25T18:10:09.472+0000] {logging_mixin.py:190} INFO - Aucune donnée valide récupérée pour la station 283181971.
+[2025-01-25T18:10:09.472+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-25T18:10:09.508+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-25T18:10:09.509+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=extraction_by_hour_dag_v11, task_id=extract_and_load_to_mongodb_station_2, run_id=scheduled__2025-01-25T18:05:00+00:00, execution_date=20250125T180500, start_date=20250125T181008, end_date=20250125T181009
+[2025-01-25T18:10:09.571+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-25T18:10:09.628+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-25T18:10:09.632+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-01-25T18:10:16.199+0000] {logging_mixin.py:190} INFO - Erreur pour la station 283164601 : HTTPSConnectionPool(host='airqino-api.magentalab.it', port=443): Max retries exceeded with url: /v3/getStationHourlyAvg/283164601 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fc68bdfdd00>: Failed to resolve 'airqino-api.magentalab.it' ([Errno -3] Temporary failure in name resolution)"))
+[2025-01-25T18:10:24.211+0000] {logging_mixin.py:190} INFO - Erreur pour la station 283181971 : HTTPSConnectionPool(host='airqino-api.magentalab.it', port=443): Max retries exceeded with url: /v3/getStationHourlyAvg/283181971 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fc68bcafcb0>: Failed to resolve 'airqino-api.magentalab.it' ([Errno -3] Temporary failure in name resolution)"))
+[2025-01-25T18:10:24.217+0000] {logging_mixin.py:190} INFO - Aucune donnée valide récupérée pour la station 283181971.
+[2025-01-25T18:10:24.218+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-25T18:10:24.461+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-25T18:10:24.461+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=extraction_by_hour_dag_v11, task_id=extract_and_load_to_mongodb_station_2, run_id=scheduled__2025-01-25T18:05:00+00:00, execution_date=20250125T180500, start_date=20250125T181006, end_date=20250125T181024
+[2025-01-25T18:10:24.514+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-25T18:10:24.537+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-25T18:10:24.540+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

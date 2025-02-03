@@ -1,0 +1,151 @@
+# docker-compose.yml
+
+version: '3'
+
+x-airflow-common: &airflow-common
+  build: .
+  environment:
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    AIRFLOW__CORE__FERNET_KEY: ''
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
+    AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
+    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
+  volumes:
+    - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
+    - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
+    - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
+  user: "${AIRFLOW_UID:-50000}:0"
+  depends_on:
+    postgres:
+      condition: service_healthy
+
+services:
+  # Service MongoDB
+  mongodb:
+    image: mongo
+    container_name: mymongodb
+    volumes:
+      - mongodb-data:/data/db
+    ports:
+      - "27018:27017"
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      retries: 5
+      start_period: 10s
+    restart: always
+
+  # Service PostgreSQL pour Airflow
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+    restart: always
+
+  # Service Apache Drill
+  drill:
+    image: apache/drill:1.21.2
+    container_name: drill
+    ports:
+      - "8047:8047"
+      - "31010:31010"
+    command: >
+      /bin/bash -c "echo 'export DRILL_HOST_NAME=localhost' >> /opt/drill/conf/drill-env.sh &&
+                    exec /opt/drill/bin/sqlline -u jdbc:drill:zk=local"
+    stdin_open: true
+    tty: true
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8047"]
+      interval: 30s
+      retries: 5
+      start_period: 30s
+    restart: always
+
+  # Airflow Webserver
+  airflow-webserver:
+    <<: *airflow-common
+    command: webserver
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # Airflow Scheduler
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # Airflow CLI (optionnel)
+  airflow-cli:
+    <<: *airflow-common
+    command: bash -c "airflow"
+    tty: true
+
+  # Service Airflow (optionnel, image officielle)
+  airflow:
+    image: apache/airflow:latest
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    ports:
+      - "8081:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # Service Superset
+  superset:
+    build:
+      context: .
+      dockerfile: Dockerfile.superset
+    container_name: superset
+    environment:
+      SUPERSET_SECRET_KEY: "this_is_a_very_secured_key"
+      # On définit DRILL_HOST comme "drill" (le nom du service Drill)
+      DRILL_HOST: drill
+      DRILL_PORT: 8047
+    ports:
+      - "8091:8088"
+    volumes:
+      - ./superset:/var/lib/superset
+    command: >
+      /bin/bash -c "
+      superset db upgrade &&
+      superset fab create-admin --username admin --firstname Admin --lastname User --email admin@example.com --password admin &&
+      superset init &&
+      superset run -h 0.0.0.0 -p 8088
+      "
+
+volumes:
+  postgres-db-volume:
+  mongodb-data:

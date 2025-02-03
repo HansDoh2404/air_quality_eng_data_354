@@ -1,0 +1,22 @@
+[2025-01-22T10:09:39.340+0000] {processor.py:186} INFO - Started process (PID=397) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_setup_teardown.py
+[2025-01-22T10:09:39.341+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_setup_teardown.py for tasks to queue
+[2025-01-22T10:09:39.344+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:39.344+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_setup_teardown.py
+[2025-01-22T10:09:39.354+0000] {processor.py:925} INFO - DAG(s) 'example_setup_teardown' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_setup_teardown.py
+[2025-01-22T10:09:39.485+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:39.484+0000] {override.py:1911} INFO - Created Permission View: can edit on DAG:example_setup_teardown
+[2025-01-22T10:09:39.498+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:39.497+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG:example_setup_teardown
+[2025-01-22T10:09:39.511+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:39.510+0000] {override.py:1911} INFO - Created Permission View: can read on DAG:example_setup_teardown
+[2025-01-22T10:09:39.522+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:39.522+0000] {override.py:1911} INFO - Created Permission View: can create on DAG Run:example_setup_teardown
+[2025-01-22T10:09:39.530+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:39.530+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG Run:example_setup_teardown
+[2025-01-22T10:09:39.539+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:39.539+0000] {override.py:1911} INFO - Created Permission View: menu access on DAG Run:example_setup_teardown
+[2025-01-22T10:09:39.548+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:39.547+0000] {override.py:1911} INFO - Created Permission View: can read on DAG Run:example_setup_teardown
+[2025-01-22T10:09:39.548+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:39.548+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-22T10:09:39.562+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:39.561+0000] {dag.py:3262} INFO - Creating ORM DAG for example_setup_teardown
+[2025-01-22T10:09:39.563+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:09:39.562+0000] {dag.py:4180} INFO - Setting next_dagrun for example_setup_teardown to None, run_after=None
+[2025-01-22T10:09:39.586+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_setup_teardown.py took 0.253 seconds
+[2025-01-22T10:10:09.870+0000] {processor.py:186} INFO - Started process (PID=683) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_setup_teardown.py
+[2025-01-22T10:10:09.871+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_setup_teardown.py for tasks to queue
+[2025-01-22T10:10:09.875+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:10:09.874+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_setup_teardown.py
+[2025-01-22T10:10:09.887+0000] {processor.py:925} INFO - DAG(s) 'example_setup_teardown' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_setup_teardown.py
+[2025-01-22T10:10:09.917+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:10:09.917+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-22T10:10:09.937+0000] {logging_mixin.py:190} INFO - [2025-01-22T10:10:09.937+0000] {dag.py:4180} INFO - Setting next_dagrun for example_setup_teardown to None, run_after=None
+[2025-01-22T10:10:09.965+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_setup_teardown.py took 0.102 seconds

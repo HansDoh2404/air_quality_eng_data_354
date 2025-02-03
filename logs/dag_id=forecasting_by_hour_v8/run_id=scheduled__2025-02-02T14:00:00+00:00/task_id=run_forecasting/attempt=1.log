@@ -1,0 +1,150 @@
+[2025-02-02T15:49:21.809+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-02T15:49:21.823+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: forecasting_by_hour_v8.run_forecasting scheduled__2025-02-02T14:00:00+00:00 [queued]>
+[2025-02-02T15:49:21.830+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: forecasting_by_hour_v8.run_forecasting scheduled__2025-02-02T14:00:00+00:00 [queued]>
+[2025-02-02T15:49:21.830+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-02-02T15:49:21.842+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): run_forecasting> on 2025-02-02 14:00:00+00:00
+[2025-02-02T15:49:21.856+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'forecasting_by_hour_v8', 'run_forecasting', 'scheduled__2025-02-02T14:00:00+00:00', '--job-id', '153', '--raw', '--subdir', 'DAGS_FOLDER/forecasting_by_hour.py', '--cfg-path', '/tmp/tmp5ch9qo3k']
+[2025-02-02T15:49:21.858+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1038) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-02-02T15:49:21.858+0000] {standard_task_runner.py:105} INFO - Job 153: Subtask run_forecasting
+[2025-02-02T15:49:21.858+0000] {standard_task_runner.py:72} INFO - Started process 1041 to run task
+[2025-02-02T15:49:21.899+0000] {task_command.py:467} INFO - Running <TaskInstance: forecasting_by_hour_v8.run_forecasting scheduled__2025-02-02T14:00:00+00:00 [running]> on host a0bc887b90c4
+[2025-02-02T15:49:21.968+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='forecasting_by_hour_v8' AIRFLOW_CTX_TASK_ID='run_forecasting' AIRFLOW_CTX_EXECUTION_DATE='2025-02-02T14:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-02T14:00:00+00:00'
+[2025-02-02T15:49:21.970+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-02-02T15:49:26.906+0000] {logging_mixin.py:190} INFO - Données chargées depuis MongoDB :
+[2025-02-02T15:49:26.929+0000] {logging_mixin.py:190} INFO -             CO          T  ...           timestamp  station_id
+0     0.000000  28.193335  ... 2024-01-29 02:00:00   283164601
+8524  0.002873  27.800001  ... 2024-01-29 02:00:00   283181971
+8525  0.259503  27.550001  ... 2024-01-29 03:00:00   283181971
+1     0.000000  27.866667  ... 2024-01-29 03:00:00   283164601
+8526  0.069233  27.366667  ... 2024-01-29 04:00:00   283181971
+
+[5 rows x 11 columns]
+[2025-02-02T15:49:26.929+0000] {logging_mixin.py:190} INFO - Colonnes disponibles : ['CO', 'T', 'T. int.', 'NO2', 'O3', 'PM10', 'PM2.5', 'RH', 'date_extraction', 'timestamp', 'station_id']
+[2025-02-02T15:49:26.929+0000] {logging_mixin.py:190} INFO - Variables à prévoir : ['CO', 'T', 'T. int.', 'NO2', 'O3', 'PM10', 'PM2.5', 'RH']
+[2025-02-02T15:49:26.929+0000] {logging_mixin.py:190} INFO - 
+Prévision pour la variable CO:
+[2025-02-02T15:49:26.991+0000] {forecaster.py:961} INFO - Disabling yearly seasonality. Run prophet with yearly_seasonality=True to override this.
+[2025-02-02T15:49:27.041+0000] {filesystem.py:118} DEBUG - input tempfile: /tmp/tmpfd3ej7gu/fuvd5r15.json
+[2025-02-02T15:49:27.463+0000] {filesystem.py:118} DEBUG - input tempfile: /tmp/tmpfd3ej7gu/epqkg4ix.json
+[2025-02-02T15:49:27.473+0000] {model.py:2042} DEBUG - idx 0
+[2025-02-02T15:49:27.474+0000] {model.py:2043} DEBUG - running CmdStan, num_threads: None
+[2025-02-02T15:49:27.474+0000] {model.py:2055} DEBUG - CmdStan args: ['/home/***/.local/lib/python3.12/site-packages/prophet/stan_model/prophet_model.bin', 'random', 'seed=71787', 'data', 'file=/tmp/tmpfd3ej7gu/fuvd5r15.json', 'init=/tmp/tmpfd3ej7gu/epqkg4ix.json', 'output', 'file=/tmp/tmpfd3ej7gu/prophet_modelc90roor2/prophet_model-20250202154927.csv', 'method=optimize', 'algorithm=lbfgs', 'iter=10000']
+[2025-02-02T15:49:27.475+0000] {logging_mixin.py:190} WARNING - 15:49:27 - cmdstanpy - INFO - Chain [1] start processing
+[2025-02-02T15:49:27.475+0000] {model.py:2058} INFO - Chain [1] start processing
+[2025-02-02T15:49:32.387+0000] {logging_mixin.py:190} WARNING - 15:49:32 - cmdstanpy - INFO - Chain [1] done processing
+[2025-02-02T15:49:32.386+0000] {model.py:2115} INFO - Chain [1] done processing
+[2025-02-02T15:49:34.862+0000] {logging_mixin.py:190} INFO -                next_hour      pred  pred_lower  pred_upper
+8673 2025-01-28 02:00:00  0.023390   -0.121461    0.169607
+8674 2025-01-28 03:00:00  0.014706   -0.131741    0.162836
+[2025-02-02T15:49:34.863+0000] {logging_mixin.py:190} INFO - 
+Prévision pour la variable T:
+[2025-02-02T15:49:34.883+0000] {forecaster.py:961} INFO - Disabling yearly seasonality. Run prophet with yearly_seasonality=True to override this.
+[2025-02-02T15:49:34.907+0000] {filesystem.py:118} DEBUG - input tempfile: /tmp/tmpfd3ej7gu/xeqynmvp.json
+[2025-02-02T15:49:35.513+0000] {filesystem.py:118} DEBUG - input tempfile: /tmp/tmpfd3ej7gu/dyn6bspt.json
+[2025-02-02T15:49:35.515+0000] {model.py:2042} DEBUG - idx 0
+[2025-02-02T15:49:35.515+0000] {model.py:2043} DEBUG - running CmdStan, num_threads: None
+[2025-02-02T15:49:35.515+0000] {model.py:2055} DEBUG - CmdStan args: ['/home/***/.local/lib/python3.12/site-packages/prophet/stan_model/prophet_model.bin', 'random', 'seed=34049', 'data', 'file=/tmp/tmpfd3ej7gu/xeqynmvp.json', 'init=/tmp/tmpfd3ej7gu/dyn6bspt.json', 'output', 'file=/tmp/tmpfd3ej7gu/prophet_modela_4ycd0p/prophet_model-20250202154935.csv', 'method=optimize', 'algorithm=lbfgs', 'iter=10000']
+[2025-02-02T15:49:35.516+0000] {logging_mixin.py:190} WARNING - 15:49:35 - cmdstanpy - INFO - Chain [1] start processing
+[2025-02-02T15:49:35.516+0000] {model.py:2058} INFO - Chain [1] start processing
+[2025-02-02T15:49:43.022+0000] {logging_mixin.py:190} WARNING - 15:49:43 - cmdstanpy - INFO - Chain [1] done processing
+[2025-02-02T15:49:43.021+0000] {model.py:2115} INFO - Chain [1] done processing
+[2025-02-02T15:49:45.251+0000] {logging_mixin.py:190} INFO -                next_hour       pred  pred_lower  pred_upper
+8673 2025-01-28 02:00:00  28.694206   27.028137   30.151867
+8674 2025-01-28 03:00:00  28.545568   27.063172   30.067479
+[2025-02-02T15:49:45.251+0000] {logging_mixin.py:190} INFO - 
+Prévision pour la variable T. int.:
+[2025-02-02T15:49:45.274+0000] {forecaster.py:961} INFO - Disabling yearly seasonality. Run prophet with yearly_seasonality=True to override this.
+[2025-02-02T15:49:45.299+0000] {filesystem.py:118} DEBUG - input tempfile: /tmp/tmpfd3ej7gu/xx3s0zyv.json
+[2025-02-02T15:49:45.766+0000] {filesystem.py:118} DEBUG - input tempfile: /tmp/tmpfd3ej7gu/10kkua_v.json
+[2025-02-02T15:49:45.773+0000] {model.py:2042} DEBUG - idx 0
+[2025-02-02T15:49:45.773+0000] {model.py:2043} DEBUG - running CmdStan, num_threads: None
+[2025-02-02T15:49:45.773+0000] {model.py:2055} DEBUG - CmdStan args: ['/home/***/.local/lib/python3.12/site-packages/prophet/stan_model/prophet_model.bin', 'random', 'seed=7472', 'data', 'file=/tmp/tmpfd3ej7gu/xx3s0zyv.json', 'init=/tmp/tmpfd3ej7gu/10kkua_v.json', 'output', 'file=/tmp/tmpfd3ej7gu/prophet_model60hza8pd/prophet_model-20250202154945.csv', 'method=optimize', 'algorithm=lbfgs', 'iter=10000']
+[2025-02-02T15:49:45.774+0000] {logging_mixin.py:190} WARNING - 15:49:45 - cmdstanpy - INFO - Chain [1] start processing
+[2025-02-02T15:49:45.774+0000] {model.py:2058} INFO - Chain [1] start processing
+[2025-02-02T15:49:53.375+0000] {logging_mixin.py:190} WARNING - 15:49:53 - cmdstanpy - INFO - Chain [1] done processing
+[2025-02-02T15:49:53.374+0000] {model.py:2115} INFO - Chain [1] done processing
+[2025-02-02T15:49:55.071+0000] {logging_mixin.py:190} INFO -                next_hour        pred  pred_lower  pred_upper
+8673 2025-01-28 02:00:00  398.917950  376.711812  421.098572
+8674 2025-01-28 03:00:00  397.535402  375.091948  421.365080
+[2025-02-02T15:49:55.072+0000] {logging_mixin.py:190} INFO - 
+Prévision pour la variable NO2:
+[2025-02-02T15:49:55.087+0000] {forecaster.py:961} INFO - Disabling yearly seasonality. Run prophet with yearly_seasonality=True to override this.
+[2025-02-02T15:49:55.108+0000] {filesystem.py:118} DEBUG - input tempfile: /tmp/tmpfd3ej7gu/8miyb4sx.json
+[2025-02-02T15:49:55.567+0000] {filesystem.py:118} DEBUG - input tempfile: /tmp/tmpfd3ej7gu/9hmj6_7d.json
+[2025-02-02T15:49:55.568+0000] {model.py:2042} DEBUG - idx 0
+[2025-02-02T15:49:55.568+0000] {model.py:2043} DEBUG - running CmdStan, num_threads: None
+[2025-02-02T15:49:55.568+0000] {model.py:2055} DEBUG - CmdStan args: ['/home/***/.local/lib/python3.12/site-packages/prophet/stan_model/prophet_model.bin', 'random', 'seed=31782', 'data', 'file=/tmp/tmpfd3ej7gu/8miyb4sx.json', 'init=/tmp/tmpfd3ej7gu/9hmj6_7d.json', 'output', 'file=/tmp/tmpfd3ej7gu/prophet_modell5stwzd1/prophet_model-20250202154955.csv', 'method=optimize', 'algorithm=lbfgs', 'iter=10000']
+[2025-02-02T15:49:55.568+0000] {logging_mixin.py:190} WARNING - 15:49:55 - cmdstanpy - INFO - Chain [1] start processing
+[2025-02-02T15:49:55.568+0000] {model.py:2058} INFO - Chain [1] start processing
+[2025-02-02T15:50:02.300+0000] {logging_mixin.py:190} WARNING - 15:50:02 - cmdstanpy - INFO - Chain [1] done processing
+[2025-02-02T15:50:02.300+0000] {model.py:2115} INFO - Chain [1] done processing
+[2025-02-02T15:50:03.956+0000] {logging_mixin.py:190} INFO -                next_hour       pred  pred_lower  pred_upper
+8673 2025-01-28 02:00:00  19.512146   18.389610   20.672358
+8674 2025-01-28 03:00:00  19.512899   18.347866   20.645180
+[2025-02-02T15:50:03.957+0000] {logging_mixin.py:190} INFO - 
+Prévision pour la variable O3:
+[2025-02-02T15:50:03.973+0000] {forecaster.py:961} INFO - Disabling yearly seasonality. Run prophet with yearly_seasonality=True to override this.
+[2025-02-02T15:50:03.992+0000] {filesystem.py:118} DEBUG - input tempfile: /tmp/tmpfd3ej7gu/kai3iave.json
+[2025-02-02T15:50:04.435+0000] {filesystem.py:118} DEBUG - input tempfile: /tmp/tmpfd3ej7gu/jgncgu47.json
+[2025-02-02T15:50:04.440+0000] {model.py:2042} DEBUG - idx 0
+[2025-02-02T15:50:04.441+0000] {model.py:2043} DEBUG - running CmdStan, num_threads: None
+[2025-02-02T15:50:04.441+0000] {model.py:2055} DEBUG - CmdStan args: ['/home/***/.local/lib/python3.12/site-packages/prophet/stan_model/prophet_model.bin', 'random', 'seed=93877', 'data', 'file=/tmp/tmpfd3ej7gu/kai3iave.json', 'init=/tmp/tmpfd3ej7gu/jgncgu47.json', 'output', 'file=/tmp/tmpfd3ej7gu/prophet_modelzw1hi3yp/prophet_model-20250202155004.csv', 'method=optimize', 'algorithm=lbfgs', 'iter=10000']
+[2025-02-02T15:50:04.441+0000] {logging_mixin.py:190} WARNING - 15:50:04 - cmdstanpy - INFO - Chain [1] start processing
+[2025-02-02T15:50:04.441+0000] {model.py:2058} INFO - Chain [1] start processing
+[2025-02-02T15:50:09.075+0000] {logging_mixin.py:190} WARNING - 15:50:09 - cmdstanpy - INFO - Chain [1] done processing
+[2025-02-02T15:50:09.074+0000] {model.py:2115} INFO - Chain [1] done processing
+[2025-02-02T15:50:10.824+0000] {logging_mixin.py:190} INFO -                next_hour       pred  pred_lower  pred_upper
+8673 2025-01-28 02:00:00  27.215938   21.776916   33.168923
+8674 2025-01-28 03:00:00  27.122204   21.443417   32.287664
+[2025-02-02T15:50:10.825+0000] {logging_mixin.py:190} INFO - 
+Prévision pour la variable PM10:
+[2025-02-02T15:50:10.843+0000] {forecaster.py:961} INFO - Disabling yearly seasonality. Run prophet with yearly_seasonality=True to override this.
+[2025-02-02T15:50:10.865+0000] {filesystem.py:118} DEBUG - input tempfile: /tmp/tmpfd3ej7gu/r6carnpf.json
+[2025-02-02T15:50:11.307+0000] {filesystem.py:118} DEBUG - input tempfile: /tmp/tmpfd3ej7gu/o056m5lc.json
+[2025-02-02T15:50:11.309+0000] {model.py:2042} DEBUG - idx 0
+[2025-02-02T15:50:11.309+0000] {model.py:2043} DEBUG - running CmdStan, num_threads: None
+[2025-02-02T15:50:11.309+0000] {model.py:2055} DEBUG - CmdStan args: ['/home/***/.local/lib/python3.12/site-packages/prophet/stan_model/prophet_model.bin', 'random', 'seed=28768', 'data', 'file=/tmp/tmpfd3ej7gu/r6carnpf.json', 'init=/tmp/tmpfd3ej7gu/o056m5lc.json', 'output', 'file=/tmp/tmpfd3ej7gu/prophet_modeliojwu4pc/prophet_model-20250202155011.csv', 'method=optimize', 'algorithm=lbfgs', 'iter=10000']
+[2025-02-02T15:50:11.311+0000] {logging_mixin.py:190} WARNING - 15:50:11 - cmdstanpy - INFO - Chain [1] start processing
+[2025-02-02T15:50:11.311+0000] {model.py:2058} INFO - Chain [1] start processing
+[2025-02-02T15:50:16.587+0000] {logging_mixin.py:190} WARNING - 15:50:16 - cmdstanpy - INFO - Chain [1] done processing
+[2025-02-02T15:50:16.587+0000] {model.py:2115} INFO - Chain [1] done processing
+[2025-02-02T15:50:18.239+0000] {logging_mixin.py:190} INFO -                next_hour       pred  pred_lower  pred_upper
+8673 2025-01-28 02:00:00  31.017497   10.843552   51.939575
+8674 2025-01-28 03:00:00  30.274211    9.764030   51.294498
+[2025-02-02T15:50:18.239+0000] {logging_mixin.py:190} INFO - 
+Prévision pour la variable PM2.5:
+[2025-02-02T15:50:18.255+0000] {forecaster.py:961} INFO - Disabling yearly seasonality. Run prophet with yearly_seasonality=True to override this.
+[2025-02-02T15:50:18.273+0000] {filesystem.py:118} DEBUG - input tempfile: /tmp/tmpfd3ej7gu/66zfrt9e.json
+[2025-02-02T15:50:18.727+0000] {filesystem.py:118} DEBUG - input tempfile: /tmp/tmpfd3ej7gu/pvk0z31p.json
+[2025-02-02T15:50:18.728+0000] {model.py:2042} DEBUG - idx 0
+[2025-02-02T15:50:18.728+0000] {model.py:2043} DEBUG - running CmdStan, num_threads: None
+[2025-02-02T15:50:18.729+0000] {model.py:2055} DEBUG - CmdStan args: ['/home/***/.local/lib/python3.12/site-packages/prophet/stan_model/prophet_model.bin', 'random', 'seed=90942', 'data', 'file=/tmp/tmpfd3ej7gu/66zfrt9e.json', 'init=/tmp/tmpfd3ej7gu/pvk0z31p.json', 'output', 'file=/tmp/tmpfd3ej7gu/prophet_modelphpz7urv/prophet_model-20250202155018.csv', 'method=optimize', 'algorithm=lbfgs', 'iter=10000']
+[2025-02-02T15:50:18.729+0000] {logging_mixin.py:190} WARNING - 15:50:18 - cmdstanpy - INFO - Chain [1] start processing
+[2025-02-02T15:50:18.729+0000] {model.py:2058} INFO - Chain [1] start processing
+[2025-02-02T15:50:24.743+0000] {logging_mixin.py:190} WARNING - 15:50:24 - cmdstanpy - INFO - Chain [1] done processing
+[2025-02-02T15:50:24.743+0000] {model.py:2115} INFO - Chain [1] done processing
+[2025-02-02T15:50:26.322+0000] {logging_mixin.py:190} INFO -                next_hour       pred  pred_lower  pred_upper
+8673 2025-01-28 02:00:00  12.614221    4.421377   21.110420
+8674 2025-01-28 03:00:00  12.501898    4.835667   19.641612
+[2025-02-02T15:50:26.322+0000] {logging_mixin.py:190} INFO - 
+Prévision pour la variable RH:
+[2025-02-02T15:50:26.340+0000] {forecaster.py:961} INFO - Disabling yearly seasonality. Run prophet with yearly_seasonality=True to override this.
+[2025-02-02T15:50:26.364+0000] {filesystem.py:118} DEBUG - input tempfile: /tmp/tmpfd3ej7gu/gbuqsvtp.json
+[2025-02-02T15:50:26.791+0000] {filesystem.py:118} DEBUG - input tempfile: /tmp/tmpfd3ej7gu/9e772n7j.json
+[2025-02-02T15:50:26.794+0000] {model.py:2042} DEBUG - idx 0
+[2025-02-02T15:50:26.794+0000] {model.py:2043} DEBUG - running CmdStan, num_threads: None
+[2025-02-02T15:50:26.794+0000] {model.py:2055} DEBUG - CmdStan args: ['/home/***/.local/lib/python3.12/site-packages/prophet/stan_model/prophet_model.bin', 'random', 'seed=17176', 'data', 'file=/tmp/tmpfd3ej7gu/gbuqsvtp.json', 'init=/tmp/tmpfd3ej7gu/9e772n7j.json', 'output', 'file=/tmp/tmpfd3ej7gu/prophet_model1bf2ngww/prophet_model-20250202155026.csv', 'method=optimize', 'algorithm=lbfgs', 'iter=10000']
+[2025-02-02T15:50:26.794+0000] {logging_mixin.py:190} WARNING - 15:50:26 - cmdstanpy - INFO - Chain [1] start processing
+[2025-02-02T15:50:26.794+0000] {model.py:2058} INFO - Chain [1] start processing
+[2025-02-02T15:50:30.736+0000] {logging_mixin.py:190} WARNING - 15:50:30 - cmdstanpy - INFO - Chain [1] done processing
+[2025-02-02T15:50:30.736+0000] {model.py:2115} INFO - Chain [1] done processing
+[2025-02-02T15:50:32.440+0000] {logging_mixin.py:190} INFO -                next_hour       pred  pred_lower  pred_upper
+8543 2025-01-28 02:00:00  85.332699   77.548736   92.603935
+8544 2025-01-28 03:00:00  85.886604   78.134827   92.970022
+[2025-02-02T15:50:32.453+0000] {logging_mixin.py:190} INFO - Les prévisions ont été enregistrées dans : /opt/***/dags/ml/predictions.txt
+[2025-02-02T15:50:32.456+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-02-02T15:50:32.464+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-02-02T15:50:32.465+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=forecasting_by_hour_v8, task_id=run_forecasting, run_id=scheduled__2025-02-02T14:00:00+00:00, execution_date=20250202T140000, start_date=20250202T154921, end_date=20250202T155032
+[2025-02-02T15:50:32.531+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-02-02T15:50:32.545+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-02T15:50:32.546+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

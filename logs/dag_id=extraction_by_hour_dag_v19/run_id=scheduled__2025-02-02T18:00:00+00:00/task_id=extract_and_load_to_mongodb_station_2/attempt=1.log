@@ -1,0 +1,22 @@
+[2025-02-02T19:12:57.649+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-02T19:12:57.684+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: extraction_by_hour_dag_v19.extract_and_load_to_mongodb_station_2 scheduled__2025-02-02T18:00:00+00:00 [queued]>
+[2025-02-02T19:12:57.701+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: extraction_by_hour_dag_v19.extract_and_load_to_mongodb_station_2 scheduled__2025-02-02T18:00:00+00:00 [queued]>
+[2025-02-02T19:12:57.701+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-02-02T19:12:57.719+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_and_load_to_mongodb_station_2> on 2025-02-02 18:00:00+00:00
+[2025-02-02T19:12:57.730+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'extraction_by_hour_dag_v19', 'extract_and_load_to_mongodb_station_2', 'scheduled__2025-02-02T18:00:00+00:00', '--job-id', '201', '--raw', '--subdir', 'DAGS_FOLDER/extract_data_by_hour.py', '--cfg-path', '/tmp/tmpkxfbaodj']
+[2025-02-02T19:12:57.735+0000] {standard_task_runner.py:105} INFO - Job 201: Subtask extract_and_load_to_mongodb_station_2
+[2025-02-02T19:12:57.735+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=178) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-02-02T19:12:57.736+0000] {standard_task_runner.py:72} INFO - Started process 187 to run task
+[2025-02-02T19:12:57.826+0000] {task_command.py:467} INFO - Running <TaskInstance: extraction_by_hour_dag_v19.extract_and_load_to_mongodb_station_2 scheduled__2025-02-02T18:00:00+00:00 [running]> on host 13fc8c60662c
+[2025-02-02T19:12:58.019+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='extraction_by_hour_dag_v19' AIRFLOW_CTX_TASK_ID='extract_and_load_to_mongodb_station_2' AIRFLOW_CTX_EXECUTION_DATE='2025-02-02T18:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-02T18:00:00+00:00'
+[2025-02-02T19:12:58.021+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-02-02T19:14:27.341+0000] {logging_mixin.py:190} INFO - Erreur pour la station 283164601 : ('Connection broken: IncompleteRead(1318912 bytes read, 126505 more expected)', IncompleteRead(1318912 bytes read, 126505 more expected))
+[2025-02-02T19:15:31.382+0000] {job.py:229} INFO - Heartbeat recovered after 10.65 seconds
+[2025-02-02T19:15:58.984+0000] {logging_mixin.py:190} INFO - Dernier enregistrement pour la station 283181971 (list1) inséré avec succès dans MongoDB.
+[2025-02-02T19:15:58.985+0000] {logging_mixin.py:190} INFO - Dernier enregistrement pour la station 283181971 (list2) inséré avec succès dans MongoDB.
+[2025-02-02T19:15:58.987+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-02-02T19:15:58.994+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-02-02T19:15:58.994+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=extraction_by_hour_dag_v19, task_id=extract_and_load_to_mongodb_station_2, run_id=scheduled__2025-02-02T18:00:00+00:00, execution_date=20250202T180000, start_date=20250202T191257, end_date=20250202T191558
+[2025-02-02T19:15:59.016+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-02-02T19:15:59.027+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-02T19:15:59.029+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
