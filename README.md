@@ -39,10 +39,10 @@ Entrer la chaine de connection suivante : drill+sadrill://drill:8047/mongo.air_q
 ## Architecture du projet
 L'architecture du projet repose sur plusieurs composants demandés et d'autres que nous avons ajoutés pour atteindre les objectifs :
 
-Base de données : MongoDB.
-Visualisation : Apache Superset
-Driver de connexion entre Superset et MongoDB : Apache Drill
-Orchestration des tâches ETL : Apache Airflow
+Base de données : MongoDB. <br />
+Visualisation : Apache Superset <br />
+Driver de connexion entre Superset et MongoDB : Apache Drill <br />
+Orchestration des tâches ETL : Apache Airflow <br />
 Modèle de Forecasting : Python (basé sur la librairie Prophet)
   
   
