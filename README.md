@@ -6,7 +6,7 @@ Docker et Docker compose
 Une fois installer, lancer docker
 
 ## Installation et lancement du projet 
-git clone https://github.com/HansDoh2404/air_quality_eng_data_354.git
+git clone https://github.com/HansDoh2404/air_quality_eng_data_354.git <br />
 cd air_quality_eng_data_354 <br />
 docker-compose up --build <br />
 cd scripts <br />
