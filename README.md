@@ -11,7 +11,9 @@ cd air_quality_eng_data_354 <br />
 docker-compose up --build <br />
 cd scripts <br />
 python3 extract_data.py <br />
-python3 calcul_avg_polluant.py
+python3 calcul_avg_polluant.py <br />
+docker cp ./superset.db.backup superset:/app/superset_home/superset.db 
+
 
 ## Connexions au différents serveurs
 **aller à :**
