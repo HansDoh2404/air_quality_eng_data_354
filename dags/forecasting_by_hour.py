@@ -149,7 +149,7 @@ default_args = {
 }
 
 dag = DAG(
-    'forecasting_by_hour_v8',
+    'forecasting_by_hour_v9',
     default_args=default_args,
     description='Exécution du script de prévision des polluants chaque heure',
     schedule_interval="0 * * * *",
