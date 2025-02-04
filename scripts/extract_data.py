@@ -1,6 +1,6 @@
 import sys
 import os
-# Ajouter du chemin du dossier parent au sys.path pour faciliter les importations
+# Ajout du chemin du dossier parent au sys.path pour faciliter les importations
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 import datetime
