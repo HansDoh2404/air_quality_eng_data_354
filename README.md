@@ -28,7 +28,7 @@ Activer les différents jobs si ce n'est pas le cas
 - Aller dans Storage :
   Dans la liste des plugin, choisissez mongo en appuyant sur le bouton update <br />
   Modifier le champ "connection" en remplaçant localhost par mymongodb (assurez-vous d'utiliser le port 27017) <br />
-  Cliquer sur Enable puis Update (une notification de succès devrait normalement apparaitre à chaque) <br /><br />
+  Cliquer sur Enable puis Update (une notification de succès devrait normalement apparaitre à chaque fois) <br /><br />
 - Aller dans Query : <br />
   Entrer : SHOW SCHEMAS; (vous devrez voir mongo.air_quality) <br />
   Revenez dans Query puis entrez : USE mongo.air_quality;
