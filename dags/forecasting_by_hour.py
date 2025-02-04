@@ -5,16 +5,11 @@ from prophet import Prophet
 from datetime import datetime, timedelta
 
 # Importations Airflow
+from config.db_config import MONGO_URI, DB_NAME, COLLECTION_NAME
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 
-# === Partie "Forecasting" (logique métier) ===
-
-# --- Configuration MongoDB ---
-MONGO_URI = "mongodb://mymongodb:27017/"
-DB_NAME = "air_quality"
-COLLECTION_NAME = "hourly_data"
-
+# === Partie "Forecasting" ===
 def load_data_from_mongodb():
     """Charge les données depuis MongoDB et retourne un DataFrame."""
     client = MongoClient(MONGO_URI)
@@ -30,7 +25,7 @@ def load_data_from_mongodb():
             ts = pd.to_datetime(ts)
         
         station_id = doc.get("station_id")
-        # Exclure les champs _id, timestamp et station_id pour récupérer seulement les mesures
+        # Exclusion des champs _id, timestamp et station_id pour récupérer seulement les mesures
         data_dict = {key: value for key, value in doc.items() if key not in ["_id", "timestamp", "station_id"]}
         
         # Ajout des colonnes station_id et timestamp
@@ -49,15 +44,11 @@ def load_data_from_mongodb():
 
 def forecast_variable(df, variable, periods=2):
     """
-    Entraîne un modèle Prophet sur la série temporelle d'une variable et prédit
-    les valeurs pour les 'periods' prochaines heures.
+    Entraînement d'un modèle Prophet sur la série temporelle d'une variable et prédiction
+    des valeurs pour les 'periods' prochaines heures.
     
-    :param df: DataFrame contenant les colonnes "timestamp" et la variable d'intérêt.
-    :param variable: Nom de la variable à prévoir.
-    :param periods: Nombre d'heures à prévoir.
-    :return: DataFrame des prévisions (colonnes 'next_hour', 'pred', 'pred_lower', 'pred_upper') ou None si données insuffisantes.
     """
-    # Préparer les données pour Prophet : colonnes 'ds' et 'y'
+    # Préparation des données pour Prophet
     df_var = df[["timestamp", variable]].dropna().rename(columns={"timestamp": "ds", variable: "y"})
     df_var = df_var.sort_values("ds")
     
@@ -73,11 +64,10 @@ def forecast_variable(df, variable, periods=2):
     future = model.make_future_dataframe(periods=periods, freq='h')
     forecast = model.predict(future)
     
-    # Récupérer uniquement les prévisions après la dernière date disponible
+    # Récupération uniquement des prévisions après la dernière date disponible
     last_date = df_var["ds"].max()
     predictions = forecast[forecast["ds"] > last_date]
-    
-    # Renommer les colonnes comme demandé
+
     predictions = predictions.rename(columns={
         "ds": "next_hour",
         "yhat": "pred",
@@ -89,7 +79,8 @@ def forecast_variable(df, variable, periods=2):
 
 def forecasting_main():
     """Exécute la logique de prévision et enregistre les résultats dans un fichier."""
-    # Charger les données depuis MongoDB
+    
+    # Chargerment des données depuis MongoDB
     df = load_data_from_mongodb()
     
     if df.empty:
@@ -100,11 +91,11 @@ def forecasting_main():
         print(df.head())
         print("Colonnes disponibles :", df.columns.tolist())
         
-        # Identifier les variables à prévoir (exclure 'timestamp', 'station_id' et 'date_extraction' si présent)
+        # Identification des variables à prévoir (exclure 'timestamp', 'station_id' et 'date_extraction' si présent)
         variables = [col for col in df.columns if col not in ["timestamp", "station_id", "date_extraction"]]
         print(f"Variables à prévoir : {variables}")
 
-        # Itérer sur chaque variable et générer les prévisions pour les 2 prochaines heures
+        # Itération sur chaque variable et génération des prévisions pour les 2 prochaines heures
         forecasts = {}
         for var in variables:
             print(f"\nPrévision pour la variable {var}:")
@@ -133,10 +124,8 @@ def forecasting_main():
 
 def run_forecasting_script():
     """
-    Fonction appelée par le DAG Airflow.
-    Elle exécute directement la fonction de prévision.
+    Appel de la fonction de forecasting par le dag Airflow
     """
-    # On peut directement appeler la fonction principale de prévision
     forecasting_main()
 
 # Paramètres du DAG
@@ -149,7 +138,7 @@ default_args = {
 }
 
 dag = DAG(
-    'forecasting_by_hour_v9',
+    'forecasting_by_hour',
     default_args=default_args,
     description='Exécution du script de prévision des polluants chaque heure',
     schedule_interval="0 * * * *",
@@ -162,7 +151,5 @@ forecasting_task = PythonOperator(
     dag=dag,
 )
 
-# Pour Airflow, il suffit que la variable "forecasting_task" soit définie.
-# Si ce script est exécuté directement (en dehors d'Airflow), on lance la fonction de prévision.
 if __name__ == "__main__":
     forecasting_main()

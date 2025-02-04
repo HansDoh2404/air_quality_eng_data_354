@@ -1,13 +1,10 @@
 from airflow import DAG
+from config.db_config import MONGO_URI, DB_NAME, COLLECTION_NAME
 from airflow.operators.python_operator import PythonOperator
 from datetime import datetime, timedelta
 from pymongo import MongoClient
 from utils.api_client import AirQinoAPIClient
 
-# Configuration MongoDB
-MONGO_URI = "mongodb://mymongodb:27017/"
-DB_NAME = "air_quality"
-COLLECTION_NAME = "hourly_data"
 
 def extract_and_load_to_mongodb(station_id, **kwargs):
     """
@@ -81,7 +78,7 @@ default_args = {
 }
 
 with DAG(
-    "extraction_by_hour_dag_v19",
+    "extraction_by_hour_dag",
     default_args=default_args,
     description="Extraction horaire des données à partir de l'API de AirQino",
     schedule_interval="0 * * * *",  # Exécution toutes les heures

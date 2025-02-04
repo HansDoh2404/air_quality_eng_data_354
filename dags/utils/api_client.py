@@ -1,7 +1,5 @@
 import requests
-
-base_url = "https://airqino-api.magentalab.it/v3/getStationHourlyAvg/"
-station_ids = ["283164601", "283181971"]
+from config.api_config import base_url, station_ids
 
 class AirQinoAPIClient:
     
@@ -9,7 +7,6 @@ class AirQinoAPIClient:
         """
         Initialisation du client API AirQino avec la configuration directement incluse.
         """
-        # Configuration directement dans le code
         self.base_url = base_url
         self.station_ids = station_ids
 
@@ -26,16 +23,15 @@ class AirQinoAPIClient:
             try:
                 # Requête à l'API
                 response = requests.get(url)
-                response.raise_for_status()  # Lève une exception si la réponse est une erreur
+                response.raise_for_status()  
                 results[station_id] = response.json()
             except requests.exceptions.RequestException as e:
-                # Gérer les erreurs de la requête
+                
                 print(f"Erreur pour la station {station_id} : {e}")
                 results[station_id] = None
         
         return results
 
-# Exemple d'utilisation
 if __name__ == "__main__":
     client = AirQinoAPIClient()
     data = client.get_hourly_data()

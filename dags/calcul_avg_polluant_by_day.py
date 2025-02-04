@@ -1,26 +1,15 @@
 import requests
 import pandas as pd
 from datetime import datetime, timedelta
+from config.db_config import MONGO_URI, DB_NAME, COLLECTION_NAME, DAILY_COLLECTION_NAME
+from config.api_config import base_url, station_ids
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from pymongo import MongoClient
 
-
-# URL de l'API
-API_URL = "https://airqino-api.magentalab.it/v3/getStationHourlyAvg/"
-
-# Configuration de MongoDB
-MONGO_URI = "mongodb://mymongodb:27017/"
-DB_NAME = "air_quality"
-COLLECTION_NAME = "hourly_data"
-DAILY_COLLECTION_NAME = "daily_averages"
-
-# Liste des identifiants des stations
-station_ids = ["283164601", "283181971"]  
-
 # Fonction pour extraire les données depuis l'API
 def fetch_data_from_api(station_id):
-    url = API_URL + station_id
+    url = base_url + station_id
     try:
         response = requests.get(url)
         response.raise_for_status()
@@ -90,7 +79,7 @@ default_args = {
 }
 
 dag = DAG(
-    'daily_pollutant_averages_v4',
+    'daily_pollutant_averages',
     default_args=default_args,
     description='DAG pour récupérer les données des polluants et calculer les moyennes de façon journalière',
     schedule_interval='0 23 * * *',  # Exécution tous les jours à 23h00
