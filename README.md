@@ -20,7 +20,7 @@ docker cp ./superset.db.backup superset:/app/superset_home/superset.db
 ## Connexions aux différents serveurs
 **Allez aux adresses suivantes :**
 ### localhost:8080 pour avoir accès à Airflow (orchestration) :
-username : airflow, login : airflow
+username : airflow, login : airflow <br />
 Activer les différents jobs si ce n'est pas le cas
 ### localhost:8047 pour avoir accès à Drill (connecteur à superset) :
 - Aller dans Storage :
@@ -33,7 +33,9 @@ Activer les différents jobs si ce n'est pas le cas
 ### localhost:8091 pour avoir accès à Superset (visualisation) :
 username : admin, login : admin <br />
 Aller dans Settings > Database Connection > Sélectionnez Apache Drill (parmi la liste des bd qui apparaitront) <br />
-Entrer la chaine de connection suivante : drill+sadrill://drill:8047/mongo.air_quality
+Entrer la chaine de connection suivante : drill+sadrill://drill:8047/mongo.air_quality <br />
+Cliquez sur test connection (pour vous assurer que la connection fonctionne normalement)<br />
+Puis cliquez sur connection<br />
 
 **N.B : Le job de forecasting génère un fichier predictions.txt que vous pourrez trouver dans dags/ml**
 
