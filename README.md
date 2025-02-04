@@ -4,6 +4,8 @@ Projet consistant à mettre en place un ETL pour l'étude de la qualité de l'ai
 ## Prérequis 
 Docker : https://docs.docker.com/get-docker <br />
 Docker compose : https://docs.docker.com/compose/install <br />
+Python : https://www.python.org/downloads <br />
+Git : https://git-scm.com/downloads <br />
 Une fois installés, lancer docker
 
 ## Installation et lancement du projet 
