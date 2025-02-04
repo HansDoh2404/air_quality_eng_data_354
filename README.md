@@ -26,16 +26,20 @@ Activer les différents jobs si ce n'est pas le cas
 - Aller dans Storage :
   Dans la liste des plugin, choisissez mongo en appuyant sur le bouton update <br />
   Modifier le champ "connection" en remplaçant localhost par mymongodb (assurez-vous d'utiliser le port 27017) <br />
-  Cliquer sur update (une notification de succès devrait normalement apparaitre) <br /><br />
+  Cliquer sur Enable puis Update (une notification de succès devrait normalement apparaitre à chaque) <br /><br />
 - Aller dans Query : <br />
-  Entrer : SHOW SCHEMAS (vous devrez voir mongo.air_quality) <br />
+  Entrer : SHOW SCHEMAS; (vous devrez voir mongo.air_quality) <br />
   Revenez dans Query puis entrez : USE mongo.air_quality;
 ### localhost:8091 pour avoir accès à Superset (visualisation) :
 username : admin, login : admin <br />
-Aller dans Settings > Database Connection > Sélectionnez Apache Drill (parmis la liste des bd qui apparaitront) <br />
-Entrer la chaine de connection suivante : drill+sadrill://drill:8047/mongo.air_quality <br />
-Cliquez sur test connection (pour vous assurer que la connection fonctionne normalement)<br />
-Puis cliquez sur connection<br />
+ - Si vous avez la visibilité directement sur les dashboards : visualisez les et appréciez les <br />
+ - Sinon : 
+    Aller dans Settings > Database Connection > Sélectionnez Apache Drill (parmis la liste des bd qui apparaitront) <br />
+    Entrer la chaine de connection suivante : drill+sadrill://drill:8047/mongo.air_quality <br />
+    Cliquez sur test connection (pour vous assurer que la connection fonctionne normalement)<br />
+    Puis cliquez sur connection<br />
+    Après cela vous devrez être en mesure de voir le dashboard AIR_QUALITY_DASHBOARD ainsi que les diagrammes <br />
+  - Au cas où une erreur apparait au niveau des diagrammes, raffraichissez la page (plusieurs fois s'il le faut) jusqu'à ce que l'erreur disparaisse <br /> 
 
 **N.B : Le job de forecasting génère un fichier predictions.txt que vous pourrez trouver dans dags/ml**
 
