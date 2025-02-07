@@ -11,6 +11,7 @@ Une fois installés, lancer docker
 ## Installation et lancement du projet 
 git clone https://github.com/HansDoh2404/air_quality_eng_data_354.git <br />
 cd air_quality_eng_data_354 <br />
+pip install -r requirements.txt <br />
 docker-compose up --build -d<br />
 cd scripts <br />
 python3 extract_data.py <br />
