@@ -95,9 +95,11 @@ services:
   airflow-webserver:
     <<: *airflow-common
     command: >
-      /bin/bash -c "
-      airflow db init &&
-      webserver"
+      bash -c "airflow db migrate && airflow webserver"
+    environment:
+      - _AIRFLOW_WWW_USER_CREATE=true
+      - _AIRFLOW_WWW_USER_USERNAME=airflow
+      - _AIRFLOW_WWW_USER_PASSWORD=airflow
     ports:
       - "8082:8080"
     healthcheck:
