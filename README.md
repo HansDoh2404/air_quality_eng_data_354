@@ -18,7 +18,9 @@ pip install pymongo (si vous rencontrez l'erreur No Module found : pymongo)<br /
 python3 extract_data.py <br />
 python3 calcul_avg_polluant.py <br />
 cd ..<br />
-docker cp ./superset.db.backup superset:/app/superset_home/superset.db 
+docker cp ./superset.db.backup superset:/app/superset_home/superset.db <br />
+sudo chown -R 50000:50000 ./logs <br />
+sudo chmod -R 775 ./logs (pour éviter des erreurs de permissions sur les logs)
 
 
 ## Connexions aux différents serveurs
@@ -26,7 +28,7 @@ docker cp ./superset.db.backup superset:/app/superset_home/superset.db
 ### localhost:8082 pour avoir accès à Airflow (orchestration) :
 username : airflow, login : airflow <br />
 Activer les différents jobs si ce n'est pas le cas <br /><br />
-Trois dags sont visibles :<br />
+Trois jobs sont visibles :<br />
 - daily_polluant_averages : pour le calcul des différentes moyennes journalières des polluants <br />
 - extraction_by_hour_dag : pour l'extraction des données horaires des différentes stations <br />
 - forecasting_by_hour : pour le forecasting sur les deux prochaines heures <br />
