@@ -14,6 +14,7 @@ cd air_quality_eng_data_354 <br />
 pip install -r requirements.txt <br />
 docker-compose up --build -d<br />
 cd scripts <br />
+pip install pymongo (si vous rencontrez l'erreur No Module found : pymongo)<br />
 python3 extract_data.py <br />
 python3 calcul_avg_polluant.py <br />
 cd ..<br />
@@ -22,9 +23,13 @@ docker cp ./superset.db.backup superset:/app/superset_home/superset.db
 
 ## Connexions aux différents serveurs
 **Allez aux adresses suivantes :**
-### localhost:8080 pour avoir accès à Airflow (orchestration) :
+### localhost:8082 pour avoir accès à Airflow (orchestration) :
 username : airflow, login : airflow <br />
-Activer les différents jobs si ce n'est pas le cas
+Activer les différents jobs si ce n'est pas le cas <br /><br />
+Trois dags sont visibles :<br />
+- daily_polluant_averages : pour le calcul des différentes moyennes journalières des polluants <br />
+- extraction_by_hour_dag : pour l'extraction des données horaires des différentes stations <br />
+- forecasting_by_hour : pour le forecasting sur les deux prochaines heures <br />
 ### localhost:8047 pour avoir accès à Drill (connecteur à superset) :
 - Aller dans Storage :
   Dans la liste des plugin, choisissez mongo en appuyant sur le bouton update <br />

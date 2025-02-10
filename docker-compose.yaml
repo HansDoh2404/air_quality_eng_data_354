@@ -76,23 +76,6 @@ services:
       start_period: 30s
     restart: "always" 
 
-  # Airflow Webserver
-  airflow-webserver:
-    <<: *airflow-common
-    command: webserver
-    ports:
-      - "8080:8080"
-    healthcheck:
-      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-      start_period: 30s
-    restart: always
-    depends_on:
-      postgres:
-        condition: service_healthy
-
   # Airflow Scheduler
   airflow-scheduler:
     <<: *airflow-common
@@ -108,6 +91,27 @@ services:
       postgres:
         condition: service_healthy
 
+  # Airflow Webserver
+  airflow-webserver:
+    <<: *airflow-common
+    command: >
+      /bin/bash -c "
+      airflow db init &&
+      webserver"
+    ports:
+      - "8082:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+        
+  # Volume pour la persistance des données de superset
   superset-postgres:
     image: postgres:13
     container_name : superset-postgres
